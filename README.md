@@ -4,29 +4,29 @@ This project would be a script made in Python with a separate GUI version with t
 
 In the case of the script, the commands to use would be:
 
--download-video = The link of the video to download in MP4 format is requested as an argument, it can be combined with -output-name.
+**-download-video** : The link of the video to download in MP4 format is requested as an argument, it can be combined with -output-name.
 
--download-song = The video link to download in MP3 format is requested as an argument, it can be combined with -output-name.
+**-download-song** : The video link to download in MP3 format is requested as an argument, it can be combined with -output-name.
 
--download-videos = A file with a list of links to download the videos in MP4 format is requested as an argument.
+**-download-videos** : A file with a list of links to download the videos in MP4 format is requested as an argument.
 
--download-songs = A file with a list of links to download in MP3 format is requested as an argument.
+**-download-songs** : A file with a list of links to download in MP3 format is requested as an argument.
 
--convert-to-mp3 = The local location of a video is requested as an argument to convert it to MP3, it must be combined with -output-name to save the song.
+**-convert-to-mp3** : The local location of a video is requested as an argument to convert it to MP3, it must be combined with -output-name to save the song.
 
--findsong-and-download = The name of the song is requested as an argument to search on Google and later download in MP3 format.
+**-findsong-and-download** : The name of the song is requested as an argument to search on Google and later download in MP3 format.
 
--findsongs-and-download = A file with a list of names to search on Google and download in MP3 format is requested as an argument.
+**-findsongs-and-download** : A file with a list of names to search on Google and download in MP3 format is requested as an argument.
 
--read-playlist = The playlist link is requested as an argument to list the corresponding links, it must be combined with the -output-name command to set the name of the file in which the results will be saved.
+**-read-playlist** : The playlist link is requested as an argument to list the corresponding links, it must be combined with the -output-name command to set the name of the file in which the results will be saved.
 
--download-playlist-videos = The playlist link is requested as an argument to download all the videos in MP4 format.
+**-download-playlist-videos** : The playlist link is requested as an argument to download all the videos in MP4 format.
 
--download-playlist-songs = The playlist link is requested as an argument to download all the videos in MP3 format.
+**-download-playlist-songs** : The playlist link is requested as an argument to download all the videos in MP3 format.
 
--output-name = The name with which the file will be saved is requested as an argument, it has to be just the name, without an extension.
+**-output-name** : The name with which the file will be saved is requested as an argument, it has to be just the name, without an extension.
 
--output-folder = The name of the folder in which it will be saved is requested as an argument, if it does not exist, it creates it, this option can be combined with all the functions in which videos or songs are downloaded.
+**-output-folder** : The name of the folder in which it will be saved is requested as an argument, if it does not exist, it creates it, this option can be combined with all the functions in which videos or songs are downloaded.
 
 In the GUI version it is only allowed to download videos and songs with the option to choose a name and folder. Additionally, when starting it will detect if there is a valid link on the clipboard to insert it directly into the Link textbox.
 
