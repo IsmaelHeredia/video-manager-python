@@ -3,6 +3,7 @@
 # Written by Ismael Heredia
 # pip install yt-dlp
 # pip install --upgrade yt-dlp
+# pip install yt-dlp --upgrade
 # 01/01/2022 - Module youtube_dl was changed for yt_dlp
 
 from modules import colors
@@ -18,11 +19,11 @@ class videoManager(object):
 
         self.gs = googleSearch.googleSearch()
 
-        self.directory = os.path.join(os.path.expanduser("~"), "Music") + "\\Video_downloads"
-        self.directory_videos = os.path.join(os.path.expanduser("~"), "Videos") + "\\Video_downloads"
+        self.directory = os.path.join(os.path.expanduser("~"), "Música") + "/Video_downloads"
+        self.directory_videos = os.path.join(os.path.expanduser("~"), "Vídeos") + "/Video_downloads"
         self.directory_original = self.directory
 
-        self.TEMP_VIDEO = self.directory + "\\temp_video.mp4"
+        self.TEMP_VIDEO = self.directory + "/temp_video.mp4"
 
         self.name_video = None
         self.name_song = None
@@ -31,7 +32,7 @@ class videoManager(object):
         self.timeout_wait = 5
 
         self.ydl_opts_videos = {
-            "format": "mp4",
+            'format': 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]',
             "outtmpl": self.TEMP_VIDEO,
             "ignoreerrors": True,
             "cachedir": False
@@ -55,8 +56,8 @@ class videoManager(object):
         self.output_folder = output_folder
 
     def clear_temp(self):
-        temp_songs = self.directory  + "\\temp_video.mp4"
-        temp_videos = self.directory_videos + "\\temp_video.mp4"
+        temp_songs = self.directory  + "/temp_video.mp4"
+        temp_videos = self.directory_videos + "/temp_video.mp4"
 
         if os.path.isfile(temp_songs):
             os.remove(temp_songs)
@@ -93,12 +94,12 @@ class videoManager(object):
                     video_path = ""
 
                     if self.output_folder is None:
-                        video_path = self.directory_videos + "\\" + video_title + ".mp4"
+                        video_path = self.directory_videos + "/" + video_title + ".mp4"
                     else:
-                        check_folder = self.directory_videos + "\\" + self.output_folder
+                        check_folder = self.directory_videos + "/" + self.output_folder
                         if not os.path.exists(check_folder):
                             os.makedirs(check_folder)
-                        video_path = check_folder + "\\" + video_title + ".mp4"
+                        video_path = check_folder + "/" + video_title + ".mp4"
 
                     if not os.path.isfile(video_path):
                         os.rename(self.TEMP_VIDEO,video_path)
@@ -133,12 +134,12 @@ class videoManager(object):
             fullpath = ""
 
             if self.output_folder is None:
-                fullpath = self.directory + "\\" + filename
+                fullpath = self.directory + "/" + filename
             else:
-                check_folder = self.directory + "\\" + self.output_folder
+                check_folder = self.directory + "/" + self.output_folder
                 if not os.path.exists(check_folder):
                     os.makedirs(check_folder)
-                fullpath = check_folder + "\\" + filename
+                fullpath = check_folder + "/" + filename
 
             try:
                 clip = mp.VideoFileClip(video)
