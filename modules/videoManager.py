@@ -18,9 +18,19 @@ class videoManager(object):
     def __init__(self):
 
         self.gs = googleSearch.googleSearch()
-
-        self.directory = os.path.join(os.path.expanduser("~"), "Música") + "/Video_downloads"
-        self.directory_videos = os.path.join(os.path.expanduser("~"), "Vídeos") + "/Video_downloads"
+        
+        self.music_folder = ""
+        self.videos_folder = ""
+        
+        if os.name == "nt":
+            self.music_folder = "Music"
+            self.videos_folder = "Videos"
+        else:
+            self.music_folder = "Música"
+            self.videos_folder = "Vídeos"
+            
+        self.directory = os.path.join(os.path.expanduser("~"), self.music_folder) + "/Video_downloads"
+        self.directory_videos = os.path.join(os.path.expanduser("~"), self.videos_folder) + "/Video_downloads"
         self.directory_original = self.directory
 
         self.TEMP_VIDEO = self.directory + "/temp_video.mp4"
